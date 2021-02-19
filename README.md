@@ -53,3 +53,13 @@ Quand vous avez terminé :
 - La justesse des algorithmes : le problème est peut-être plus complexe que ce que vous pensez.
 - La lisibilité du code : toujours important pour permettre les revues de code et la maintenance.
 - La maîtrise de Symfony : il y a de nombreuses manières de répondre aux questions, mais certaines sont meilleures que d'autres.
+
+
+### Bugs :
+docker-compose Dockerfile
+app_dev.php bloque l'ip 
+cache: droit d'écriture
+
+### Run :
+docker-compose exec php  vendor/bin/phpunit
+

@@ -33,6 +33,7 @@ ENV PHP_FPM_PM_LOG_LEVEL=${debug}
 
 ARG DOCKER_UID
 
+# Pose au problème
 RUN set -xe; \
     apk add --no-cache --virtual .build-deps shadow; \
     mkdir -p /var/www/html; \
