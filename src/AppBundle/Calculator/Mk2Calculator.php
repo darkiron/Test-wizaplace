@@ -14,16 +14,20 @@ class Mk2Calculator implements CalculatorInterface {
         $change = (new Change);
 
         if ($amount >= 10){
-            $change->bill10 = $amount/10;
+            $change->bill10 = intdiv($amount,10);
             $amount = $amount - ($change->bill10 * 10);
         }
 
         if ($amount >= 5){
-            $change->bill5 = $amount/5;
+            $change->bill5 = intdiv($amount,5);
             $amount = $amount - ($change->bill10 * 5);
         }
 
-        $change->coin2 = $amount/2;
+        if ($amount >= 2){
+            //var_dump(intdiv($amount,2));die;
+            $change->coin2 = intdiv($amount,2);
+            // var_dump($change);
+        }
 
         return $change;
     }
