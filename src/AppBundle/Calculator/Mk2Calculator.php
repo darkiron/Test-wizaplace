@@ -9,7 +9,7 @@ class Mk2Calculator implements CalculatorInterface {
 
     public function getChange(int $amount): ?Change
     {
-        if ($amount === 0 || $amount === 1) return null;
+        if ($amount <= 1) return null;
 
         $change = (new Change);
 
@@ -20,13 +20,11 @@ class Mk2Calculator implements CalculatorInterface {
 
         if ($amount >= 5){
             $change->bill5 = intdiv($amount,5);
-            $amount = $amount - ($change->bill10 * 5);
+            $amount = $amount - ($change->bill5 * 5);
         }
 
         if ($amount >= 2){
-            //var_dump(intdiv($amount,2));die;
             $change->coin2 = intdiv($amount,2);
-            // var_dump($change);
         }
 
         return $change;
