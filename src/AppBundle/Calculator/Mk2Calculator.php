@@ -25,9 +25,13 @@ class Mk2Calculator implements CalculatorInterface {
 
         if ($amount >= 2){
             $change->coin2 = intdiv($amount,2);
+            $amount = $amount - ($change->coin2 * 2);
         }
-
-        return $change;
+        
+        if ($amount === 0)
+            return $change;
+        else 
+            return null;
     }
 
     public function getSupportedModel(): string

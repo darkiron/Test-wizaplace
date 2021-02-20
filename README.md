@@ -61,5 +61,4 @@ app_dev.php bloque l'ip
 cache: droit d'écriture
 
 ### Run :
-docker-compose exec php  vendor/bin/phpunit
-
+docker-compose exec php  vendor/bin/phpunit;
